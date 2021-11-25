@@ -5,34 +5,50 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-public class CourseRatingKey implements Serializable {
+public class StudentCourseKey implements Serializable {
+
+    // attributes
 
     @Column(name = "student_id")
-    Long studentId;
+    private Long studentId;
 
     @Column(name = "course_id")
-    Long courseId;
+    private Long courseId;
 
-    public Long getStudentId() {
-        return this.studentId;
+    // constructor(s)
+
+    public StudentCourseKey() {}
+
+    public StudentCourseKey(long studentId, long courseId) {
+        this.studentId = studentId;
+        this.courseId = courseId;
     }
 
-    public Long getCourseId() {
-        return this.courseId;
+    // getters and setters
+
+    public Long getStudentId() {
+        return studentId;
     }
 
     public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
 
+    public Long getCourseId() {
+        return courseId;
+    }
+
     public void setCourseId(Long courseId) {
         this.courseId = courseId;
     }
 
+    // equals
+
+    @Override
     public boolean equals(final Object o) {
         if (o == this) return true;
-        if (!(o instanceof CourseRatingKey)) return false;
-        final CourseRatingKey other = (CourseRatingKey) o;
+        if (!(o instanceof StudentCourseKey)) return false;
+        final StudentCourseKey other = (StudentCourseKey) o;
         if (!other.canEqual((Object) this)) return false;
         final Object this$studentId = this.getStudentId();
         final Object other$studentId = other.getStudentId();
@@ -44,9 +60,12 @@ public class CourseRatingKey implements Serializable {
     }
 
     protected boolean canEqual(final Object other) {
-        return other instanceof CourseRatingKey;
+        return other instanceof StudentCourseKey;
     }
 
+    // hash
+
+    @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
@@ -57,6 +76,4 @@ public class CourseRatingKey implements Serializable {
         return result;
     }
 
-    // standard constructors, getters, and setters
-    // hashcode and equals implementation
 }

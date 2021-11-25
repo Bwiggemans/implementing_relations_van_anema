@@ -6,16 +6,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="one_to_one" />
+        <module name="06_many_to_many_with_association_class" />
+        <module name="implementing_relations" />
+        <module name="05_many_to_many" />
+        <module name="01_one_to_one_unidirectional" />
+        <module name="03_one_to_many_unidirectional" />
+        <module name="02_one_to_one_bidirectional" />
+        <module name="04_one_to_many_bidirectional" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="one_to_one" target="17" />
+      <module name="01_one_to_one_unidirectional" target="11" />
+      <module name="02_one_to_one_bidirectional" target="11" />
+      <module name="03_one_to_many_unidirectional" target="11" />
+      <module name="04_one_to_many_bidirectional" target="11" />
+      <module name="05_many_to_many" target="11" />
+      <module name="06_many_to_many_with_association_class" target="11" />
+      <module name="implementing_relations" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="one_to_one" options="-parameters" />
+      <module name="01_one_to_one_unidirectional" options="-parameters" />
+      <module name="02_one_to_one_bidirectional" options="-parameters" />
+      <module name="03_one_to_many_unidirectional" options="-parameters" />
+      <module name="04_one_to_many_bidirectional" options="-parameters" />
+      <module name="05_many_to_many" options="-parameters" />
+      <module name="06_many_to_many_with_association_class" options="-parameters" />
     </option>
   </component>
 </project>

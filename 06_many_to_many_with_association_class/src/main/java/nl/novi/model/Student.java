@@ -2,9 +2,7 @@ package nl.novi.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "students")
@@ -14,16 +12,12 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String name;
 
-    @ManyToMany
-    @JoinTable(
-            name = "students_attending_course",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id"))
-    private List<Course> courses = new ArrayList<>();
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
+    List<StudentCourseScore> scores = new ArrayList<>();
 
     // constructor
 
@@ -52,23 +46,23 @@ public class Student {
         this.name = name;
     }
 
-    public List<Course> getCourses() {
-        return courses;
+    public List<StudentCourseScore> getScores() {
+        return scores;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setScores(List<StudentCourseScore> scores) {
+        this.scores = scores;
     }
 
-    public void addCourse(Course course) {
-        this.courses.add(course);
+    public void addScores(StudentCourseScore score) {
+        this.scores.add(score);
     }
 
-    public void removeCourse(Course course) {
-        this.courses.remove(course);
+    public void removeScores(StudentCourseScore score) {
+        this.scores.remove(score);
     }
 
-    // methods
+// methods
 
     @Override
     public String toString() {

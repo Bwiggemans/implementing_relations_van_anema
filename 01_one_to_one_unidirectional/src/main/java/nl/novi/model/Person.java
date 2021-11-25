@@ -2,29 +2,43 @@ package nl.novi.model;
 
 import javax.persistence.*;
 
-@Entity(name = "persons")
+@Entity
+@Table(name = "persons")
 public class Person {
 
     // attributes
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private String name;
 
-    @OneToOne(fetch = FetchType.LAZY,
-              cascade = CascadeType.ALL,
-              mappedBy = "employee")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
+
+    // constructor
+
+    public Person() {
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public Person(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
 
     // getters and setters
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

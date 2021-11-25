@@ -37,20 +37,20 @@ public class Car {
         this.id = id;
     }
 
-    public String getType() {
-        return model;
-    }
-
-    public void setType(String type) {
-        this.model = type;
-    }
-
     public String getMake() {
         return make;
     }
 
     public void setMake(String make) {
         this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getYear() {
@@ -60,4 +60,16 @@ public class Car {
     public void setYear(String year) {
         this.year = year;
     }
+
+    // methodes
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", year='" + year + '\'' +
+                '}';
+    }
+
 }

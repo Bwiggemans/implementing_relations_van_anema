@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OneToManyUniDirectionalApplication {
+public class OneToManyBiDirectionalApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OneToManyUniDirectionalApplication.class, args);
+        SpringApplication.run(OneToManyBiDirectionalApplication.class, args);
     }
 
 }

@@ -1,32 +1,41 @@
 package nl.novi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity(name = "adresses")
+@Entity
+@Table(name = "addresses")
 public class Address {
 
     // attributes
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private String street;
     private String number;
     private String city;
-    private String zipcode;
-    private String country;
+    private String postal_code;
+
+    // constructor
+
+    public Address() {
+    }
+
+    public Address(String street, String number, String city, String postal_code) {
+        this.street = street;
+        this.number = number;
+        this.city = city;
+        this.postal_code = postal_code;
+    }
 
     // getters and setters
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -54,20 +63,12 @@ public class Address {
         this.city = city;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public String getPostalCode() {
+        return postal_code;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
+    public void setPostalCode(String postal_code) {
+        this.postal_code = postal_code;
     }
 
 }

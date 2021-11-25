@@ -4,6 +4,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/one_to_one/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/01_one_to_one_unidirectional/pom.xml" />
+        <option value="$PROJECT_DIR$/02_one_to_one_bidirectional/pom.xml" />
+        <option value="$PROJECT_DIR$/03_one_to_many_unidirectional/pom.xml" />
+        <option value="$PROJECT_DIR$/04_one_to_many_bidirectional/pom.xml" />
+        <option value="$PROJECT_DIR$/05_many_to_many_bidirectional/pom.xml" />
+        <option value="$PROJECT_DIR$/06_many_to_many_with_association_class/pom.xml" />
+        <option value="$PROJECT_DIR$/05_many_to_many/pom.xml" />
       </list>
     </option>
   </component>

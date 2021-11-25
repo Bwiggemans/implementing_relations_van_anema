@@ -1,6 +1,8 @@
 package nl.novi.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "persons")
@@ -10,32 +12,30 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private String name;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "person")
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     // constructor
 
+    public Person() {
+    }
+
     public Person(String name) {
         this.name = name;
     }
 
-    public Person(String name, Address address) {
-        this.name = name;
-        this.address = address;
-    }
-
     // getters and setters
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -53,6 +53,16 @@ public class Person {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    // methods
+
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
 }

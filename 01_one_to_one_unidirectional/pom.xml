@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>nl.novi</groupId>
-    <artifactId>one_to_one</artifactId>
+    <artifactId>one_to_one_unidirectional</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

@@ -2,7 +2,6 @@ package nl.novi.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 @Entity
@@ -13,12 +12,12 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String title;
 
-    @ManyToMany(mappedBy = "courses")
-    private List<Student> students = new ArrayList<>();
+    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER)
+    List<StudentCourseScore> scores = new ArrayList<>();
 
     // constructor
 
@@ -31,12 +30,12 @@ public class Course {
 
     // getters and setters
 
-    public Long getId() {
-        return id;
-    }
-
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -47,20 +46,20 @@ public class Course {
         this.title = title;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public List<StudentCourseScore> getScores() {
+        return scores;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setScores(List<StudentCourseScore> scores) {
+        this.scores = scores;
     }
 
-    public void addStudents(Student student) {
-        this.students.add(student);
+    public void addScores(StudentCourseScore score) {
+        this.scores.add(score);
     }
 
-    public void removeStudents(Student student) {
-        this.students.remove(student);
+    public void removeScores(StudentCourseScore score) {
+        this.scores.remove(score);
     }
 
     // methodes

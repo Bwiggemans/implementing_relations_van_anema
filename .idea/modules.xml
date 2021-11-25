@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_one_to_one_unidirectional/01_one_to_one_unidirectional.iml" filepath="$PROJECT_DIR$/01_one_to_one_unidirectional/01_one_to_one_unidirectional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_one_to_one_bidirectional/02_one_to_one_bidirectional.iml" filepath="$PROJECT_DIR$/02_one_to_one_bidirectional/02_one_to_one_bidirectional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_one_to_many_unidirectional/03_one_to_many_unidirectional.iml" filepath="$PROJECT_DIR$/03_one_to_many_unidirectional/03_one_to_many_unidirectional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_one_to_many_bidirectional/04_one_to_many_bidirectional.iml" filepath="$PROJECT_DIR$/04_one_to_many_bidirectional/04_one_to_many_bidirectional.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_many_to_many/05_many_to_many.iml" filepath="$PROJECT_DIR$/05_many_to_many/05_many_to_many.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06_many_to_many_with_association_class/06_many_to_many_with_association_class.iml" filepath="$PROJECT_DIR$/06_many_to_many_with_association_class/06_many_to_many_with_association_class.iml" />
       <module fileurl="file://$PROJECT_DIR$/implementing_relations.iml" filepath="$PROJECT_DIR$/implementing_relations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/one_to_one/one_to_one.iml" filepath="$PROJECT_DIR$/one_to_one/one_to_one.iml" />
     </modules>
   </component>
 </project>

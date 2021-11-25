@@ -1,6 +1,6 @@
 package nl.novi.initializer;
 
-import nl.novi.ManyToManyBiDirectionalApplication;
+import nl.novi.ManyToManyApplication;
 import nl.novi.model.Course;
 import nl.novi.model.Student;
 import nl.novi.repository.CourseRepository;
@@ -17,18 +17,13 @@ import java.util.Optional;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-    private static final Logger log = LoggerFactory.getLogger(ManyToManyBiDirectionalApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(ManyToManyApplication.class);
 
     @Autowired
     private StudentRepository studentRepository;
 
     @Autowired
     private CourseRepository courseRepository;
-
-    private static void attendCourse(Student student, Course course) {
-//        student.addCourse(course);
-        course.addStudents(student);
-    }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {

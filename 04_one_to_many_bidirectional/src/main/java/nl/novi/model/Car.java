@@ -16,6 +16,10 @@ public class Car {
     private String model;
     private String year;
 
+    @ManyToOne
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person owner;
+
     // constructor
 
     public Car() {
@@ -37,20 +41,20 @@ public class Car {
         this.id = id;
     }
 
-    public String getType() {
-        return model;
-    }
-
-    public void setType(String type) {
-        this.model = type;
-    }
-
     public String getMake() {
         return make;
     }
 
     public void setMake(String make) {
         this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getYear() {
@@ -61,7 +65,15 @@ public class Car {
         this.year = year;
     }
 
-    // methodes
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
+// methodes
 
     @Override
     public String toString() {

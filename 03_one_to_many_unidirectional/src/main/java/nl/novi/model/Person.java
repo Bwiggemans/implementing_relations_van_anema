@@ -16,7 +16,7 @@ public class Person {
 
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private List<Car> cars = new ArrayList<>();
 
@@ -61,6 +61,15 @@ public class Person {
 
     public void removeCar(Car car) {
         cars.remove(car);
+    }
+
+    // methodes
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
 }

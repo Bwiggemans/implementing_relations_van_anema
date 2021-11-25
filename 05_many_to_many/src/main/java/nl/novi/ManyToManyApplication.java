@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ManyToManyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ManyToManyBiDirectionalApplication.class, args);
+        SpringApplication.run(ManyToManyApplication.class, args);
     }
 
 }

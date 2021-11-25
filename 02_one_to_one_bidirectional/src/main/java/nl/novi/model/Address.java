@@ -15,18 +15,22 @@ public class Address {
     private String street;
     private String number;
     private String city;
-    private String postal_code;
+    private String postalCode;
+
+    @OneToOne
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person person;
 
     // constructor
 
     public Address() {
     }
 
-    public Address(String street, String number, String city, String postal_code) {
+    public Address(String street, String number, String city, String postalCode) {
         this.street = street;
         this.number = number;
         this.city = city;
-        this.postal_code = postal_code;
+        this.postalCode = postalCode;
     }
 
     // getters and setters
@@ -64,11 +68,31 @@ public class Address {
     }
 
     public String getPostalCode() {
-        return postal_code;
+        return postalCode;
     }
 
     public void setPostalCode(String postal_code) {
-        this.postal_code = postal_code;
+        this.postalCode = postal_code;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    // methods
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "street='" + street + '\'' +
+                ", number='" + number + '\'' +
+                ", city='" + city + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                '}';
     }
 
 }
