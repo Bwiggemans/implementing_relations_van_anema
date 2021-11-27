@@ -30,5 +30,4 @@ public class DataLoader implements ApplicationRunner {
         personRepository.save(person);
         log.info("Database seeded");
     }
-
 }

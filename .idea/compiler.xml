@@ -22,7 +22,7 @@
       <module name="04_one_to_many_bidirectional" target="11" />
       <module name="05_many_to_many" target="11" />
       <module name="06_many_to_many_with_association_class" target="11" />
-      <module name="implementing_relations" target="17" />
+      <module name="implementing_relations" target="16" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
